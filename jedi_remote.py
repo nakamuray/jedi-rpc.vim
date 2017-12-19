@@ -101,8 +101,6 @@ class JediRemote(object):
         else:
             return obj
 
-    NotFoundError = jedi.api.NotFoundError
-
 
 class RemoteObject(object):
     '''Remotely managed object
