@@ -15,14 +15,14 @@ class JediRemote(object):
     '''
     python = 'python'
     remote_command = 'jedi-remote-command.py'
-    jedi_path = ''
+    jedi_pythonx_path = ''
 
-    def __init__(self, python=None, jedi_path=None):
+    def __init__(self, python=None, jedi_pythonx_path=None):
         if python is not None:
             self.python = python
 
-        if jedi_path is not None:
-            self.jedi_path = jedi_path
+        if jedi_pythonx_path is not None:
+            self.jedi_pythonx_path = jedi_pythonx_path
 
         self._process = None
 
@@ -38,7 +38,11 @@ class JediRemote(object):
             cmd = os.path.join(
                 os.path.dirname(
                     os.path.abspath(__file__)), self.remote_command)
-            self._process = Popen([self.python, cmd, self.jedi_path], stdin=PIPE, stdout=PIPE)
+            self._process = Popen(
+                [self.python, cmd, self.jedi_pythonx_path],
+                stdin=PIPE,
+                stdout=PIPE
+            )
 
         return self._process
 
