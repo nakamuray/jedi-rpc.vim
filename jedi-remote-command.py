@@ -3,6 +3,7 @@
 import json
 import sys
 import traceback
+import os
 
 
 class JSONRPC(object):
@@ -94,7 +95,8 @@ if __name__ == '__main__':
     if len(sys.argv) > 1:
         jedi_path = sys.argv[1]
         if jedi_path:
-            sys.path.append(jedi_path)
+            sys.path.append(os.path.join(jedi_path, 'jedi'))
+            sys.path.append(os.path.join(jedi_path, 'parso'))
 
     import jedi
 
