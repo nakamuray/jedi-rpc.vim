@@ -1,3 +1,6 @@
+**Because recent version of jedi has similar separate python process method to support venv,
+you don't need to use this workaround plugin anymore**
+
 jedi-rpc.vim
 ============
 
